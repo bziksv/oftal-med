@@ -1,0 +1,67 @@
+User-Agent: *
+Disallow: */index.php
+Disallow: /bitrix/
+Disallow: /*show_include_exec_time=
+Disallow: /*show_page_exec_time=
+Disallow: /*show_sql_stat=
+Disallow: /*bitrix_include_areas=
+Disallow: /*clear_cache=
+Disallow: /*clear_cache_session=
+Disallow: /*ADD_TO_COMPARE_LIST
+Disallow: /*ORDER_BY
+Disallow: /*PAGEN
+Disallow: /*?print=
+Disallow: /*&print=
+Disallow: /*print_course=
+Disallow: /*?action=
+Disallow: /*&action=
+Disallow: /*register=
+Disallow: /*forgot_password=
+Disallow: /*change_password=
+Disallow: /*login=
+Disallow: /*logout=
+Disallow: /*auth=
+Disallow: /*backurl=
+Disallow: /*back_url=
+Disallow: /*BACKURL=
+Disallow: /*BACK_URL=
+Disallow: /*back_url_admin=
+Disallow: /*?utm_source=
+Disallow: /*?bxajaxid=
+Disallow: /*&bxajaxid=
+Disallow: /*?view_result=
+Disallow: /*&view_result=
+Disallow: *rk.php?goto=
+Disallow: *rk.php?
+Disallow: *click.php
+Disallow: *redirect.php
+Disallow: /?
+Disallow: /*?
+Disallow: /articles/
+Disallow: /personal/cart/
+Disallow: /personal/orders/
+Disallow: /personal/private/
+Disallow: /desktop_app/
+Disallow: /include/twitter.php
+Disallow: /store/*
+Disallow: /include/company_logo_mobile.php
+##################################################################
+Disallow: /catalog/refraktokeratometr_vzor/avtorefraktometr_vzor_9000_pr_dixion/
+Disallow: /vacancies/
+##################################################################
+###Категории в которых товары, которые ищут мало
+### 23-09-2024
+Disallow: /catalog/oftalmologicheskie-instrumenty/
+Disallow: /catalog/oftalmologicheskie-instrumenty-germaniya/
+Disallow: /catalog/oftalmologicheskie-instrumenti-rossiya/
+###
+###Товары дубли
+Disallow: /catalog/avtorefkeratometr-bez-stolika-bez-poverki-rmk-200-kitay
+###
+Allow: /bitrix/components/
+Allow: /bitrix/cache/
+Allow: /bitrix/js/
+Allow: /bitrix/templates/
+Allow: /bitrix/panel/
+Host: https://oftal-med.ru/
+Sitemap: https://oftal-med.ru/sitemap.xml
