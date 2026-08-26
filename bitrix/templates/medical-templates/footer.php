@@ -104,6 +104,7 @@
 	"popup-callback", 
 	array(
 		"EMAIL_TO" => "info@oftal-med.ru",
+		"EVENT_NAME" => "CALLBACK",
 		"EVENT_MESSAGE_ID" => array(
 			0 => "53",
 		),
