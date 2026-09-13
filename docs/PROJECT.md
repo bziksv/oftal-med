@@ -139,7 +139,10 @@ cd oftal-med.ru
 git add … && git commit -m "…" && git push origin main
 
 # только когда пользователь просит выкатить на сервер
+ssh almamed 'cd /var/www/oftal-med.ru/data/www/oftal-med.ru && git pull --ff-only'
 ```
+
+Корень сайта на prod — git-клон `origin/main`. `/.git` закрыт nginx + `.htaccess` (404).
 
 **Запрещено:** автодеплой на prod, правки на prod без commit, `scp` файлов кода.
 

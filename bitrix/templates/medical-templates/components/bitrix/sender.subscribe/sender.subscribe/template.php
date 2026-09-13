@@ -86,11 +86,18 @@ $buttonId = $this->randString();
 					}
 
 					var btnSpan = btn.querySelector('span');
+					if (!btnSpan) {
+						return;
+					}
 					var btnSubscribeWidth = btnSpan.style.width;
 					BX.addClass(btn, 'send');
-					btnSpan.outerHTML = "<span><i class='fa fa-check'></i> <?=GetMessage("subscr_form_button_sent")?></span>";
+					btnSpan.textContent = '';
+					var icon = document.createElement('i');
+					icon.className = 'fa fa-check';
+					btnSpan.appendChild(icon);
+					btnSpan.appendChild(document.createTextNode(' <?=CUtil::JSEscape(GetMessage("subscr_form_button_sent"))?>'));
 					if (btnSubscribeWidth) {
-						btn.querySelector('span').style['min-width'] = btnSubscribeWidth + 'px';
+						btnSpan.style['min-width'] = btnSubscribeWidth + 'px';
 					}
 				}, 400);
 			}

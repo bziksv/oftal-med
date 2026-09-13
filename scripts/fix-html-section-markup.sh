@@ -59,5 +59,27 @@ UPDATE b_iblock_element SET DETAIL_TEXT = REPLACE(DETAIL_TEXT,
 WHERE ID IN (25801, 25851) AND DETAIL_TEXT LIKE '%<h5>Заключение</h5>%';
 SQL
 
+"$MYSQL" -h 127.0.0.1 -u oftal_med_local -poftal_med_local --default-character-set=utf8mb4 oftal_med_ru_db <<'SQL'
+UPDATE b_iblock_element SET DETAIL_TEXT = REPLACE(
+  REPLACE(DETAIL_TEXT, '<h2>\r\nОбзор офтальмологических комбайнов&nbsp;</h2>', '<h2>Роль комбайна в кабинете офтальмолога</h2>'),
+  '<h2>Обзор офтальмологических комбайнов</h2>',
+  '<h2>Роль комбайна в кабинете офтальмолога</h2>'
+), TIMESTAMP_X = NOW()
+WHERE ID = 17723 AND DETAIL_TEXT LIKE '%<h2>%Обзор офтальмологических комбайнов%';
+
+UPDATE b_iblock_section SET DESCRIPTION = REPLACE(DESCRIPTION, '<h2>Эластотонометры</h2>', '<h2>Набор Филатова-Кальфа для эластотонометрии</h2>'), TIMESTAMP_X = NOW()
+WHERE ID = 5190 AND DESCRIPTION LIKE '%<h2>Эластотонометры</h2>%';
+
+UPDATE b_iblock_section SET DESCRIPTION = REPLACE(DESCRIPTION, '<h2>Авторефкератометры Взор</h2>', '<h2>Авторефкератометр ВЗОР 9000</h2>'), TIMESTAMP_X = NOW()
+WHERE ID = 5208 AND DESCRIPTION LIKE '%<h2>Авторефкератометры Взор</h2>%';
+
+UPDATE b_iblock_section SET DESCRIPTION = REPLACE(DESCRIPTION, '<h2>Линзметры</h2>', '<h2>Измерение преломляющей силы линз</h2>'), TIMESTAMP_X = NOW()
+WHERE ID = 5210 AND DESCRIPTION LIKE '%<h2>Линзметры</h2>%';
+
+UPDATE b_iblock_section SET DESCRIPTION = REPLACE(DESCRIPTION, '<h2>Офтальмоскопы ручные, карманные</h2>', '<h2>Карманные модели для осмотра глазного дна</h2>'), TIMESTAMP_X = NOW()
+WHERE ID = 5213 AND DESCRIPTION LIKE '%<h2>Офтальмоскопы ручные, карманные</h2>%';
+SQL
+
 echo "Section HTML markup updated (4957, 4936)"
 echo "Heading hierarchy updated (17711, 17438, 25725, 25801, 25851)"
+echo "Duplicate H1/H2 uniqueized (17723, 5190, 5208, 5210, 5213)"
