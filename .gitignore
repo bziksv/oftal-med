@@ -103,3 +103,7 @@ yandex_*
 google*
 mailru-*
 cmsmagazine*
+
+# иначе google* прячет protobuf модуля pull
+!bitrix/modules/pull/vendor/Google/
+!bitrix/modules/pull/vendor/Google/**
