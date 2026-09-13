@@ -1,0 +1,63 @@
+#!/bin/sh
+# Идемпотентно чинит разметку в описаниях разделов (локальная MySQL).
+# 4957 BIO Welch Allyn: <b> вокруг <p> → <p><b>…</b></p>
+# 4936 test-poloski: лишний </div>
+set -e
+cd "$(dirname "$0")/.."
+
+if [ -x /opt/homebrew/opt/mysql@8.0/bin/mysql ]; then
+  MYSQL=/opt/homebrew/opt/mysql@8.0/bin/mysql
+else
+  MYSQL=$(command -v mysql)
+fi
+
+"$MYSQL" -h 127.0.0.1 -u oftal_med_local -poftal_med_local --default-character-set=utf8mb4 oftal_med_ru_db <<'SQL'
+UPDATE b_iblock_section
+SET DESCRIPTION = REPLACE(
+  DESCRIPTION,
+  ' <b>\r\n<p>\r\n\t Перечень основных характеристик продукта включает:\r\n</p>\r\n </b>',
+  '\r\n<p><b>Перечень основных характеристик продукта включает:</b></p>'
+), TIMESTAMP_X = NOW()
+WHERE ID = 4957
+  AND DESCRIPTION LIKE '%<b>%Перечень основных характеристик продукта включает:%';
+
+UPDATE b_iblock_section
+SET DESCRIPTION = REPLACE(
+  DESCRIPTION,
+  '\t</ul>\r\n\t</div>\r\n\t</div>\r\n</div>',
+  '\t</ul>\r\n\t</div>\r\n</div>'
+), TIMESTAMP_X = NOW()
+WHERE ID = 4936
+  AND DESCRIPTION LIKE '%width: 508px%</ul>%';
+SQL
+
+"$MYSQL" -h 127.0.0.1 -u oftal_med_local -poftal_med_local --default-character-set=utf8mb4 oftal_med_ru_db <<'SQL'
+UPDATE b_iblock_element SET DETAIL_TEXT = REPLACE(REPLACE(DETAIL_TEXT,
+  '<h4> <b>Офтальмоскопы, выпускаемые сейчас,&nbsp;</b>выделяются: </h4>',
+  '<h3> <b>Офтальмоскопы, выпускаемые сейчас,&nbsp;</b>выделяются: </h3>'),
+  '<h4><b>Офтальмоскопы, выпускаемые сейчас,&nbsp;</b>выделяются:</h4>',
+  '<h3><b>Офтальмоскопы, выпускаемые сейчас,&nbsp;</b>выделяются:</h3>'),
+  TIMESTAMP_X = NOW()
+WHERE ID = 17711 AND DETAIL_TEXT LIKE '%<h4>%выпускаемые сейчас%';
+
+UPDATE b_iblock_element SET DETAIL_TEXT = REPLACE(DETAIL_TEXT,
+  '<h4>Преимущества использования Омега 500</h4>',
+  '<h3>Преимущества использования Омега 500</h3>'),
+  TIMESTAMP_X = NOW()
+WHERE ID = 17438 AND DETAIL_TEXT LIKE '%<h4>Преимущества использования Омега 500</h4>%';
+
+UPDATE b_iblock_element SET DETAIL_TEXT = REPLACE(DETAIL_TEXT,
+  '<h4>Простота использования и обслуживания</h4>',
+  '<h3>Простота использования и обслуживания</h3>'),
+  TIMESTAMP_X = NOW()
+WHERE ID = 25725 AND DETAIL_TEXT LIKE '%<h4>Простота использования и обслуживания</h4>%';
+
+UPDATE b_iblock_element SET DETAIL_TEXT = REPLACE(DETAIL_TEXT,
+  '<h5>Заключение</h5>',
+  '<h3>Заключение</h3>'),
+  TIMESTAMP_X = NOW()
+WHERE ID IN (25801, 25851) AND DETAIL_TEXT LIKE '%<h5>Заключение</h5>%';
+SQL
+
+echo "Section HTML markup updated (4957, 4936)"
+echo "Heading hierarchy updated (17711, 17438, 25725, 25801, 25851)"

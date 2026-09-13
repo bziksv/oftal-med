@@ -21,7 +21,7 @@
  <b>Условия оплаты и поставки товаров без оформления индивидуального договора</b>
 </p>
 <p>
-	 Покупатели, которые оплачивают заказ без запроса на договор с индивидуальными условиями, соглашаются с правилами оферты, которые находятся по адресу: <noindex><a href="https://oftal-med.ru/upload/oferta-oftal-med.pdf" rel="nofollow" target="_blank">https://oftal-med.ru/upload/oferta-oftal-med.pdf</a></noindex>
+	 Покупатели, которые оплачивают заказ без запроса на договор с индивидуальными условиями, соглашаются с правилами оферты, которые находятся по адресу: <!--noindex--><a href="https://oftal-med.ru/upload/oferta-oftal-med.pdf" rel="nofollow" target="_blank">https://oftal-med.ru/upload/oferta-oftal-med.pdf</a><!--/noindex-->
 </p>
 <p>
  <br>

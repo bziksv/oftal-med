@@ -9,6 +9,10 @@
 $previousLevel = 0;
 
 foreach($arResult as $key => $arItem):
+	$willRender = !empty($arItem["IS_PARENT"]) || ($arItem["PERMISSION"] > "D");
+	if (!$willRender) {
+		continue;
+	}
 ?>
 	<?if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel):?>
 		<?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
@@ -20,13 +24,9 @@ foreach($arResult as $key => $arItem):
                 <i class="catalog__submenu_toggle icon-arrow_down"></i>
 				<ul class="catalog__submenu">
 	<?else:?>
-
-		<?if ($arItem["PERMISSION"] > "D"):?>
 				<li <?if($arItem["DEPTH_LEVEL"] == 1):?>class="catalog__item"<?endif;?>>
                     <a href="<?=$arItem["LINK"]?>" class="<?if($arItem["DEPTH_LEVEL"] > 1):?>catalog__submenu_link<?else:?>catalog__link<?endif;?>"><?=$arItem["TEXT"]?></a>
 				</li>
-		<?endif?>
-
 	<?endif?>
 	<?$previousLevel = $arItem["DEPTH_LEVEL"];?>
 <?endforeach?>
