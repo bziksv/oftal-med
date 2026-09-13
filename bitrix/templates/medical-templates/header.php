@@ -155,6 +155,7 @@ if (substr($APPLICATION->GetCurPage(),-3) === "-r/") {
 
             <div class="header__contact_mobile icon-phone_2"></div>
 
+            <!--noindex-->
             <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "basket.small.mobile", Array(
                 "HIDE_ON_BASKET_PAGES" => "Y",	// Не показывать на страницах корзины и оформления заказа
                 "PATH_TO_BASKET" => SITE_DIR."personal/cart/",	// Страница корзины
@@ -172,6 +173,7 @@ if (substr($APPLICATION->GetCurPage(),-3) === "-r/") {
             ),
                 false
             );?>
+            <!--/noindex-->
 
             <?$APPLICATION->IncludeComponent(
                 "bitrix:search.title",
@@ -211,7 +213,7 @@ if (substr($APPLICATION->GetCurPage(),-3) === "-r/") {
                 false
             );?>
 
-            <a href="/personal/cart/" class="header__order">Оформить заказ</a>
+            <!--noindex--><a href="/personal/cart/" class="header__order" rel="nofollow">Оформить заказ</a><!--/noindex-->
         </div>
     </div>
 </div>

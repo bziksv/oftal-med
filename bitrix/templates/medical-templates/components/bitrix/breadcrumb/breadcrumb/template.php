@@ -26,11 +26,12 @@ for($index = 0; $index < $itemSize; $index++)
 
 	if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1)
 	{
+		$homeNoindex = ($index === 0) ? array('<!--noindex-->', '<!--/noindex-->', ' rel="nofollow"') : array('', '', '');
 		$strReturn .= '
 			<li class="breadcrumb__item">
-				<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="url" class="'.$icon.'">
+				'.$homeNoindex[0].'<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="url" class="'.$icon.'"'.$homeNoindex[2].'>
 					<span>'.$title.'</span>
-				</a>
+				</a>'.$homeNoindex[1].'
 			</li>';
 	}
 	else

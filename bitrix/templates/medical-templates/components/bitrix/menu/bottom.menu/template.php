@@ -24,7 +24,7 @@ for($i = 0;$i < $count;$i++):
 ?>
 	<ul class="footer__nav">
 		<? foreach($menu[$i] as $m): ?>
-		<li class="footer__nav_item"><a href="<?=$m['LINK']?>" class="footer__nav_link"><?=$m['TEXT']?></a></li>
+		<li class="footer__nav_item"><a href="<?=$m['LINK']?>" class="footer__nav_link" rel="nofollow"><?=$m['TEXT']?></a></li>
 		<? endforeach; ?>
 	</ul>
 

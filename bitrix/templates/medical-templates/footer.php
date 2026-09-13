@@ -44,7 +44,7 @@
     <div class="container">
         <div class="footer__row">
             <div class="footer__col">
-
+                <!--noindex-->
                 <?$APPLICATION->IncludeComponent("bitrix:menu", "bottom.menu", Array(
                     "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
                     "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
@@ -61,6 +61,7 @@
                 ),
                     false
                 );?>
+                <!--/noindex-->
 
             </div>
             <div class="footer__col flex-3">
