@@ -80,6 +80,19 @@ UPDATE b_iblock_section SET DESCRIPTION = REPLACE(DESCRIPTION, '<h2>Офталь
 WHERE ID = 5213 AND DESCRIPTION LIKE '%<h2>Офтальмоскопы ручные, карманные</h2>%';
 SQL
 
+"$MYSQL" -h 127.0.0.1 -u oftal_med_local -poftal_med_local --default-character-set=utf8mb4 oftal_med_ru_db <<'SQL'
+UPDATE b_iblock_iproperty
+SET TEMPLATE = 'Как выбрать офтальмоскоп: советы и критерии'
+WHERE ID = 342 AND CODE = 'ELEMENT_META_TITLE' AND ENTITY_ID = 17742
+  AND TEMPLATE = 'Как выбрать офтальмоскоп';
+
+UPDATE b_iblock_element_iprop
+SET VALUE = 'Как выбрать офтальмоскоп: советы и критерии'
+WHERE ELEMENT_ID = 17742 AND IPROP_ID = 342
+  AND VALUE = 'Как выбрать офтальмоскоп';
+SQL
+
 echo "Section HTML markup updated (4957, 4936)"
 echo "Heading hierarchy updated (17711, 17438, 25725, 25801, 25851)"
 echo "Duplicate H1/H2 uniqueized (17723, 5190, 5208, 5210, 5213)"
+echo "Short browser titles lengthened (17742)"

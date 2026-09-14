@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "О компании — магазин офтальмологического оборудования");
 $APPLICATION->SetPageProperty("description", "Информация о компании. Проконсультируем по всем вопросам об оборудовании");
 $APPLICATION->SetTitle("О компании");
 ?><div class="wrapper">
@@ -36,7 +37,7 @@ $APPLICATION->SetTitle("О компании");
 	</div>
 
 	<div class="main text">
-		<div class="title"><?$APPLICATION->ShowTitle()?></div>
+		<div class="title"><?$APPLICATION->ShowTitle(false)?></div>
 		<div class="content">
 			<?
 			// включаемая область для раздела
