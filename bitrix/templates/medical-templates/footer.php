@@ -166,7 +166,7 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks2");
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/50216689" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/50216689" style="position:absolute; left:-9999px;" alt="Яндекс.Метрика" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
 <!-- Сквозная от Prime -->
