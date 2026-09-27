@@ -1,8 +1,12 @@
 <?php
 class CNigesCookiesAcceptPublic
 {
+	protected static $deferredHtml = '';
+
 	/**
-	 * Inject cookie notice at the end of page generation.
+	 * Render the cookie notice during epilog, but keep the markup for
+	 * insertion before </body>. OnEpilog runs after the template footer
+	 * has already closed the document.
 	 */
 	public static function OnEpilog()
 	{
@@ -26,6 +30,7 @@ class CNigesCookiesAcceptPublic
 			return;
 		}
 
+		ob_start();
 		$APPLICATION->IncludeComponent(
 			'niges:cookiesaccept',
 			'.default',
@@ -33,5 +38,27 @@ class CNigesCookiesAcceptPublic
 			false,
 			array('HIDE_ICONS' => 'Y')
 		);
+		$html = ob_get_clean();
+		if (!is_string($html) || trim($html) === '') {
+			return;
+		}
+
+		self::$deferredHtml = $html;
+		AddEventHandler('main', 'OnEndBufferContent', array('CNigesCookiesAcceptPublic', 'OnEndBufferContent'));
+	}
+
+	public static function OnEndBufferContent(&$content)
+	{
+		if (self::$deferredHtml === '' || !is_string($content)) {
+			return;
+		}
+
+		$pos = strripos($content, '</body>');
+		if ($pos === false) {
+			return;
+		}
+
+		$content = substr($content, 0, $pos).self::$deferredHtml.substr($content, $pos);
+		self::$deferredHtml = '';
 	}
 }
