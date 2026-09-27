@@ -4,13 +4,6 @@ if(!$arParams['SECTION']['UF_RECOMMENDED_LIST'])
 ?>
 <hr class="hr">
 
-<style>
-    .goods__name__desc{
-        font-weight: 400;
-        font-size: smaller;
-    }
-</style>
-
 <? foreach ($arParams['SECTION']['UF_RECOMMENDED_LIST'] as $p):
     $arSlider = explode('@', $p, 3);
     $title = $arSlider[0];

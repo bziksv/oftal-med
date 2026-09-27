@@ -66,7 +66,7 @@
             </div>
             <div class="footer__col flex-3">
                 <div class="footer__phone icon-phone">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/footer_phone.jpg">
+                    <img src="<?=SITE_TEMPLATE_PATH?>/img/footer_phone.jpg" alt="Телефон">
                     <span>88005555550</span>
                 </div>
                 <a href="javascript:void(0);" class="footer__callback footer__link callback-btn">Заказать звонок</a>
