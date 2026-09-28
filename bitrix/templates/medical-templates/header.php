@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="<?=SITE_TEMPLATE_PATH?>/img/favicon/apple-touch-icon-114x114.png">
 
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/fonts.css?v=1">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/vendor/jquery-ui/jquery-ui.css">
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/vendor.css">
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=<?=filemtime($_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/css/main.css')?>">
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/alertify.css">

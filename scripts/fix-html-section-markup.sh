@@ -97,6 +97,20 @@ echo "Heading hierarchy updated (17711, 17438, 25725, 25801, 25851)"
 echo "Duplicate H1/H2 uniqueized (17723, 5190, 5208, 5210, 5213)"
 echo "Short browser titles lengthened (17742)"
 
+"$MYSQL" -h 127.0.0.1 -u oftal_med_local -poftal_med_local --default-character-set=utf8mb4 oftal_med_ru_db <<'SQL'
+UPDATE b_iblock_iproperty
+SET TEMPLATE = 'Обзор фундус-камеры ZEISS CLARUS 500: как аппарат снимает глазное дно и чем полезен клинике.'
+WHERE ID = 375 AND CODE = 'ELEMENT_META_DESCRIPTION' AND ENTITY_ID = 24387
+  AND TEMPLATE LIKE 'магазин оборудования для офтальмолога%';
+
+UPDATE b_iblock_element_iprop
+SET VALUE = 'Обзор фундус-камеры ZEISS CLARUS 500: как аппарат снимает глазное дно и чем полезен клинике.'
+WHERE ELEMENT_ID = 24387 AND IPROP_ID = 375
+  AND VALUE LIKE 'магазин оборудования для офтальмолога%';
+SQL
+
+echo "Short news description lengthened (24387)"
+
 # Кириллическая «с» в #ссс ломает CSS-цвет. Списки: h2/div/p/ul не могут быть прямыми детьми ul.
 "$MYSQL" -h 127.0.0.1 -u oftal_med_local -poftal_med_local --default-character-set=utf8mb4 oftal_med_ru_db <<'SQL'
 UPDATE b_iblock_section

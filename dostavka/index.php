@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Доставка офтальмологического оборудования из интернет-магазина oftal-med.ru");
-$APPLICATION->SetPageProperty("description", "Доставка заказов из интернет-магазина oftal-med.ru");
+$APPLICATION->SetPageProperty("description", "Доставка заказов из интернет-магазина oftal-med.ru по России: сроки, способы отправки и получение оборудования.");
 $APPLICATION->SetTitle("Доставка							");
 ?>
     <div class="wrapper">

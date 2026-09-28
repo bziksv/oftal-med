@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Контакты интернет-магазина офтальмологического оборудования oftal-med.ru");
-$APPLICATION->SetPageProperty("description", "Контактная информация для оперативной связи");
+$APPLICATION->SetPageProperty("description", "Контактная информация интернет-магазина oftal-med.ru: как связаться по заказам и вопросам об оборудовании.");
 $APPLICATION->SetTitle("Контакты");
 ?><div class="wrapper">
 	<div class="sidebar">

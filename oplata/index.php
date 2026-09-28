@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Оплата товаров в интернет-магазине офтальмологического оборудования oftal-med.ru");
-$APPLICATION->SetPageProperty("description", "Оплата заказов в интернет-магазине oftal-med.ru");
+$APPLICATION->SetPageProperty("description", "Оплата заказов в интернет-магазине oftal-med.ru: доступные способы оплаты офтальмологического оборудования.");
 $APPLICATION->SetTitle("Оплата");
 ?><div class="wrapper">
 	<div class="sidebar">
