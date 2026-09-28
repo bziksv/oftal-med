@@ -1121,6 +1121,19 @@ ol,ul
     background-color: #c82c30;
     color: #fff;
 }
+button.goods__buy,
+button.goods__buy_thumbs,
+button.goods__basket
+{
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+button.goods__buy,
+button.goods__buy_thumbs
+{
+    width: 100%;
+}
 .goods .lSNext,.goods .lSPrev
 {
     height: auto;

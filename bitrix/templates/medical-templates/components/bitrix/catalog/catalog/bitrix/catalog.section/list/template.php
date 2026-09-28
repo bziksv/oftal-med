@@ -71,9 +71,9 @@ if(empty($arResult['ITEMS']))
                     ?>
                     <? if(count($articlsValues) > 1): ?>
                         <? if($let >= $arResult["UF_HIDE_BUY"] && !is_null($arResult["UF_HIDE_BUY"])): ?>
-                            <a href="javascript:void(0)" class="goods__buy" onclick="$('#more_option_<?=$item['ID']?>').bPopup({zIndex:1000});" data-text="Купить"></a>
+                            <button type="button" class="goods__buy" popovertarget="more_option_<?=$item['ID']?>" data-text="Купить"></button>
                         <? else: ?>
-                            <a href="javascript:void(0)" class="goods__buy" onclick="$('#more_option_<?=$item['ID']?>').bPopup({zIndex:1000});">Купить</a>
+                            <button type="button" class="goods__buy" popovertarget="more_option_<?=$item['ID']?>">Купить</button>
                         <? endif; ?>
                     <?else:?>
                         <input type="hidden" name="article" value="<?=$articlsValues[0] ?? ''?>">

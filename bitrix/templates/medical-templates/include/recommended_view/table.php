@@ -50,7 +50,7 @@
                         <span data-text="за штуку"><?=($item["JS_HIDE"] == "N") ? "за штуку" : "" ?></span>
                     </div>
                     <? if(count($articlsValues) > 1): ?>
-                        <a href="javascript:void(0)" class="goods__buy_thumbs" onclick="$('#more_option_<?=$item['ID']?>').bPopup({zIndex:1000});" data-text="Купить"><?=($item["JS_HIDE"] == "N") ? "Купить" : "" ?></a>
+                        <button type="button" class="goods__buy_thumbs" popovertarget="more_option_<?=$item['ID']?>" data-text="Купить"><?=($item["JS_HIDE"] == "N") ? "Купить" : "" ?></button>
                     <?else:?>
                         <input type="hidden" name="article" value="<?=htmlspecialcharsbx($articlsValues[0] ?? '')?>">
                         <a href="javascript:void(0)" class="goods__buy_thumbs" onclick="addToBasket2(<?=$item['ID']?>, $('#goods__counter_input_rec_<?=$item['ID']?>').val(),this);" data-text="Купить"><?=($item["JS_HIDE"] == "N") ? "Купить" : "" ?></a>

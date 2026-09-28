@@ -1,8 +1,19 @@
 
 .more_options {
     max-width: 800px;
+    width: min(800px, calc(100vw - 32px));
+    max-height: 90vh;
+    overflow: auto;
     display: none;
     background: #FFF;
+    border: 0;
+    padding: 0;
+}
+.more_options:popover-open {
+    display: block;
+}
+.more_options::backdrop {
+    background: rgba(0, 0, 0, 0.6);
 }
 .more_options .more_potions-p-head{
     text-align: center;
@@ -27,6 +38,8 @@
     font-size: 21px;
     cursor: pointer;
     border: 1px solid #8080803b;
+    font-family: inherit;
+    color: inherit;
 }
 .more_options .goods__list-2 .goods__text .red{
     color: #c82c30;

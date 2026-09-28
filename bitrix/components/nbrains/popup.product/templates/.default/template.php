@@ -14,8 +14,8 @@ $item = $arResult['ITEM'];
 ?>
 
 <? if(count($item['PROPERTIES']['ARTICLS']['VALUE']) > 1): ?>
-    <div class="more_options" id="more_option_<?=$item['ID']?>">
-        <span class="button b-close"><span>&times;</span></span>
+    <div class="more_options" id="more_option_<?=$item['ID']?>" popover>
+        <button type="button" class="button b-close" popovertarget="more_option_<?=$item['ID']?>" popovertargetaction="hide"><span>&times;</span></button>
         <div class="more_potions-p-head">
             Дополнительные параметры товара
         </div>
@@ -31,10 +31,10 @@ $item = $arResult['ITEM'];
                         </a>
                         <div class="goods__text">
                             <?if($art)?>
-                            <p>Тип: <strong class="red"><?=$art?></strong></p>
+                            <p>Тип: <span class="red"><?=$art?></span></p>
 
                             <? if($item['PROPERTIES']['ARTICLS']['VALUE'][$val]) ?>
-                            <p>Артикул: <strong><?=$item['PROPERTIES']['ARTICLS']['VALUE'][$val]?></strong></p>
+                            <p>Артикул: <span><?=$item['PROPERTIES']['ARTICLS']['VALUE'][$val]?></span></p>
                         </div>
                     </div>
                     <input type="hidden" name="article" value="<?=$item['PROPERTIES']['ARTICLS']['VALUE'][$val]?>">
@@ -42,9 +42,14 @@ $item = $arResult['ITEM'];
 
                     <div class="goods__main">
 
+                        <?$variantPrice = (float)$item['PROPERTIES']['PRICES']['VALUE'][$val];?>
+                        <?if($variantPrice > 0):?>
                         <div class="goods__price">
                             <?=CurrencyFormat($item['PROPERTIES']['PRICES']['VALUE'][$val],"RUB")?>
                         </div>
+                        <?else:?>
+                        <div class="goods__price tooltip" style="font-size: 15px;" data-text="Цена по запросу"></div>
+                        <?endif?>
                         <span>за штуку</span>
 
                         <div class="goods__counter">
