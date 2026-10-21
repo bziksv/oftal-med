@@ -56,7 +56,7 @@ oftal-med/                         # workspace (Mac)
 
 ## Локальная разработка (Mac, soft)
 
-Порты: **8101** (nginx), **9101** (php-fpm). MySQL 3306 (Homebrew).
+Порты: **8101** (nginx), **9101** (php-fpm **8.2**). MySQL 3306 (Homebrew).
 
 ```bash
 cd oftal-med.ru
@@ -154,6 +154,6 @@ curl -sS -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8101/
 curl -sS -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8101/catalog/
 ```
 
-## Совместимость PHP 8.3
+## Совместимость PHP 8.2
 
 В `index.php` (блок популярных категорий) ключи массива были без кавычек (`$arSection[ID]`) — на PHP 8 это fatal. Для локалки исправлено на `$arSection['ID']` и т.п.
