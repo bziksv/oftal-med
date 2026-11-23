@@ -31,6 +31,31 @@ $arResult["VARIABLES"]["SECTION_CODE"] = str_replace(' ', '-', $arResult["VARIAB
 	if ($arSection) {
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arSection['IBLOCK_ID'],$arSection['ID']);
 		$arSection = array_merge($arSection, $ipropValues->getValues());
+
+		static $noindexSectionCodes = array(
+			'avtorefkeratometry-kitay',
+			'avtorefraktometry-yaponiya',
+			'opravy-probnye-rossiya',
+			'oftalmoskopy-omega-600-led-heine-germaniya',
+			'oftalmoskopy-sigma-250',
+			'nepryamoy-binokulyarnyy-oftalmoskop-omega-500-heine-germaniya',
+			'dopolnitelnye-prinadlezhnosti-k-oftalmoskopam-heine-germaniya',
+			'komplektuyushchie-dlya-oftalmoskopov-welch-allyn',
+			'oftalmoskopy-drugikh-proizvoditeley',
+			'dopolnitelnye-prinadlezhnosti-dlya-oftalmoskopov-heine-germaniya',
+			'rukoyatki-serii-angled-heine-germaniya',
+			'rukoyatki-serii-f-o-heine-germaniya',
+			'komplektuyushchie-dlya-proektora-znakov',
+			'rabochee-mesto-oftalmologa-rossiya',
+			'rabochee-mesto-oftalmologa-yuzhnaya-koreya',
+			'rabochee-mesto-oftalmologa-italy',
+			'rabochee-mesto-oftalmologa-kitay',
+			'rabochee-mesto-oftalmologa-yaponiya',
+			'retinoskopy-welch-allyn',
+		);
+		if (in_array((string)$arSection['CODE'], $noindexSectionCodes, true)) {
+			$APPLICATION->SetPageProperty('robots', 'noindex, nofollow');
+		}
 	?>
 	<h1 class="title"><?=$arSection["SECTION_PAGE_TITLE"];?></h1>
 	<?

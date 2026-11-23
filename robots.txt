@@ -58,6 +58,27 @@ Disallow: /catalog/oftalmologicheskie-instrumenti-rossiya/
 ###Товары дубли
 Disallow: /catalog/avtorefkeratometr-bez-stolika-bez-poverki-rmk-200-kitay
 ###
+### 23-11-2026 — закрыть от индексации (дубли / низкий спрос)
+Disallow: /catalog/avtorefkeratometry-kitay/
+Disallow: /catalog/avtorefraktometry-yaponiya/
+Disallow: /catalog/opravy-probnye-rossiya/
+Disallow: /catalog/oftalmoskopy-omega-600-led-heine-germaniya/
+Disallow: /catalog/oftalmoskopy-sigma-250/
+Disallow: /catalog/nepryamoy-binokulyarnyy-oftalmoskop-omega-500-heine-germaniya/
+Disallow: /catalog/dopolnitelnye-prinadlezhnosti-k-oftalmoskopam-heine-germaniya/
+Disallow: /catalog/komplektuyushchie-dlya-oftalmoskopov-welch-allyn/
+Disallow: /catalog/oftalmoskopy-drugikh-proizvoditeley/
+Disallow: /catalog/dopolnitelnye-prinadlezhnosti-dlya-oftalmoskopov-heine-germaniya/
+Disallow: /catalog/rukoyatki-serii-angled-heine-germaniya/
+Disallow: /catalog/rukoyatki-serii-f-o-heine-germaniya/
+Disallow: /catalog/komplektuyushchie-dlya-proektora-znakov/
+Disallow: /catalog/rabochee-mesto-oftalmologa-rossiya/
+Disallow: /catalog/rabochee-mesto-oftalmologa-yuzhnaya-koreya/
+Disallow: /catalog/rabochee-mesto-oftalmologa-italy/
+Disallow: /catalog/rabochee-mesto-oftalmologa-kitay/
+Disallow: /catalog/rabochee-mesto-oftalmologa-yaponiya/
+Disallow: /catalog/retinoskopy-welch-allyn/
+###
 Allow: /bitrix/components/
 Allow: /bitrix/cache/
 Allow: /bitrix/js/

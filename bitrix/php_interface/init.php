@@ -22,6 +22,11 @@ if (
 //IBlock catalog id
 define("IBLOCK_CATALOG","33");
 
+// Капча на прямой заход /catalog/?sort|view|PAGEN|q|section_id (порт vilmed vm_catalog_gate)
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/s4_catalog_gate.php')) {
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/s4_catalog_gate.php';
+}
+
 // PHP 8.2: orphaned event OnUserLogin → CGroupAuthProvider::OnUserLogin (method
 // missing) fatals Authorize during guest checkout — loader flashes, order only
 // on 2nd click after session is already set. kawe/gnkmed do not have this row.

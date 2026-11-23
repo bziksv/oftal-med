@@ -11,8 +11,8 @@ Bitrix-интернет-магазин офтальмологического о
 |---|---|
 | GitHub | https://github.com/bziksv/oftal-med |
 | **Git root** | `oftal-med.ru/` (= корень сайта на prod) |
-| Prod IP | `45.90.35.63` (SSH: `almamed`) |
-| Prod path | `/var/www/oftal-med.ru/data/www/oftal-med.ru` |
+| Prod IP | `37.46.134.70` (SSH: `backup`, хост `s4.prime-ltd.su`) |
+| Prod path | `/var/www/oftal_med_ru_usr/data/www/oftal-med.ru` |
 | Домен | https://oftal-med.ru |
 | Локально | http://127.0.0.1:8101/ |
 
@@ -130,8 +130,8 @@ Soft-режим:
 
 | | |
 |---|---|
-| SSH / host | `almamed` → `45.90.35.63` |
-| Path | `/var/www/oftal-med.ru/data/www/oftal-med.ru` |
+| SSH / host | `backup` → `37.46.134.70` |
+| Path | `/var/www/oftal_med_ru_usr/data/www/oftal-med.ru` |
 | Remote | https://github.com/bziksv/oftal-med |
 
 ```bash
@@ -139,7 +139,7 @@ cd oftal-med.ru
 git add … && git commit -m "…" && git push origin main
 
 # только когда пользователь просит выкатить на сервер
-ssh almamed 'cd /var/www/oftal-med.ru/data/www/oftal-med.ru && git pull --ff-only'
+ssh backup 'cd /var/www/oftal_med_ru_usr/data/www/oftal-med.ru && git pull --ff-only'
 ```
 
 Корень сайта на prod — git-клон `origin/main`. `/.git` закрыт nginx + `.htaccess` (404).

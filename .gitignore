@@ -89,6 +89,9 @@ scripts/node_modules/
 
 # Local overlays
 bitrix/php_interface/dbconn.local.php
+local/datagon/*.token
+.deploy-revision
+*.s4bak
 
 # --- Локальная разработка (Mac) ---
 .local/run/
