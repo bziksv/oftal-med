@@ -225,8 +225,7 @@ $thirdParties = oftalMedLegalThirdPartiesData();
     <p>5.2. Для реализации прав Субъект может обратиться к Оператору:</p>
     <ul>
         <li>по адресу: <?= legal_var($legal['address_legal']) ?>;</li>
-        <li>по e-mail: <?= legal_mailto($legal['email']) ?>;</li>
-        <li>по телефону: <?= legal_tel($legal['phone'], $legal['phone_tel']) ?>.</li>
+        <li>по e-mail: <?= legal_mailto($legal['email']) ?>.</li>
     </ul>
     <p>5.3. Оператор рассматривает обращение и направляет ответ в течение 10 рабочих дней с момента получения, если иной срок не установлен законом.</p>
 
@@ -275,7 +274,6 @@ $thirdParties = oftalMedLegalThirdPartiesData();
         <p>ОГРН: <?= legal_var($legal['ogrn']) ?></p>
         <p>КПП: <?= legal_var($legal['kpp']) ?></p>
         <p>Сайт: <?= legal_link($legal['site']) ?></p>
-        <p>Телефон: <?= legal_tel($legal['phone'], $legal['phone_tel']) ?></p>
         <p>E-mail: <?= legal_mailto($legal['email']) ?></p>
         <p>Адрес: <?= legal_var($legal['address_legal']) ?></p>
     </div>

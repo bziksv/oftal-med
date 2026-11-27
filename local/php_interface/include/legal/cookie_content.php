@@ -65,7 +65,6 @@ require_once __DIR__ . '/third_parties_render.php';
         <p>ОГРН: <?= legal_var($legal['ogrn']) ?></p>
         <p>КПП: <?= legal_var($legal['kpp']) ?></p>
         <p>Сайт: <?= legal_link($legal['site']) ?></p>
-        <p>Телефон: <?= legal_tel($legal['phone'], $legal['phone_tel']) ?></p>
         <p>E-mail: <?= legal_mailto($legal['email']) ?></p>
         <p>Адрес: <?= legal_var($legal['address_legal']) ?></p>
     </div>
