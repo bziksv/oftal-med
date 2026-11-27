@@ -5,8 +5,8 @@ Bitrix-магазин офтальмологического оборудова�
 | | |
 |---|---|
 | GitHub | https://github.com/bziksv/oftal-med |
-| Prod | https://oftal-med.ru (`45.90.35.63`) |
-| Path | `/var/www/oftal-med.ru/data/www/oftal-med.ru` |
+| Prod | https://oftal-med.ru (`37.46.134.70`, SSH: `backup`) |
+| Path | `/var/www/oftal_med_ru_usr/data/www/oftal-med.ru` |
 | Local | http://127.0.0.1:8101/ |
 
 Полная документация: [docs/PROJECT.md](docs/PROJECT.md)
