@@ -50,7 +50,7 @@ return [
         ],
         [
             'name' => 'ООО «Бизнес-аналитика» (Roistat)',
-            'inn' => '7709975219',
+            'inn' => '7709973919',
             'url' => 'https://roistat.com/',
             'link_label' => 'Roistat',
             'suffix' => 'сквозная аналитика и call-tracking',
